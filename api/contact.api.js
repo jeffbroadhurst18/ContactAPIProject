@@ -20,7 +20,7 @@ module.exports = function (app, db) {
 
     app.put('/api/contact', function (req, res) {
         console.log(req.body);
-        var id = req.body.id; //parseInt(req.body.id);
+        var id = req.body.id; 
         console.log('Id is ' + id);
         db.collection('contact').updateOne({
             id: id
@@ -39,7 +39,7 @@ module.exports = function (app, db) {
 
     app.post('/api/contact', function (req, res) {
         console.log('POST');
-        products.push(req.body);
+        // contacts.push(req.body);
         db.collection('contact').insertOne(req.body).then(function (result) {
             res.send(result);
         });
